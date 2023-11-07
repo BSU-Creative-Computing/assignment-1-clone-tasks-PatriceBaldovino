@@ -1,0 +1,267 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&family=Work+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Nav Bar */
+.nav {
+    height: 4em;
+    width: 100%;
+    padding: 14px;
+    background-color: #1e90ff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Search Bar */
+.nav input[type=text] {
+    display: block;
+    padding: 10px;
+    height: 2rem;
+    width: 14rem;
+    border: 1px solid #0000009e;
+    font-size: 10px;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+/* Title */
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+/* Nav List */
+.nav>.nav-links {
+    display: inline;
+    float: right;
+    font-size: 13px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+/* Nav Bar Hover*/
+.nav>.nav-links>a:hover {
+    background-color: hsl(210, 86%, 47%);
+    border-radius: .5em;
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+/* Container of Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5em;
+
+    /* Size and Margin */
+    width: 1050px;
+    margin: 15px auto;
+    justify-content: center;
+
+}
+
+/* Image */
+.container img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Card 1 - Avengers */
+.card-1 .info {
+    background-color: white;
+    padding: .5px;
+    border: 1px solid #00000020;
+    box-shadow: 2px 2px 3px #00000050;
+    overflow: auto;
+    padding: 5px 10px;
+}
+
+/* Card 2 - Others Movies */
+.card-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: .5em;
+    overflow: auto;
+
+    padding-right: 3px;
+    padding-bottom: 1em;
+}
+
+/* The Other Movies Container */
+.content1,
+.content2,
+.content3,
+.content4 {
+    background-color: white;
+    padding: 13px;
+    border: 1px solid #00000020;
+    box-shadow: 2px 2px 3px #00000050;
+}
+
+/* Header */
+.card-1 h1,
+.card-2 h1 {
+    font-size: 17px;
+}
+
+/* Text */
+.card-1 p,
+.card-2 p {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 10px 0;
+}
+
+/* Buttons */
+.card-1 button,
+.card-2 button {
+    float: right;
+    color: white;
+    background-color: #1e90ff;
+    font-size: 12px;
+    padding: 8px 15px;
+    margin: 15px 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 13px;
+    padding: 1.5em;
+}
+
+/* Media Queries */
+/* Screens below 1280px */
+@media (max-width: 1280px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Screens below 1024px */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .card-2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Screens below 800px */
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Titles */
+    .card-1 h1,
+    .card-2 h1 {
+        font-size: 20px;
+    }
+
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    /* Search Bar - remove */
+    .nav input[type=text] {
+        display: none;
+    }
+
+    .nav>.nav-btn>label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 64px;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: hsl(210, 86%, 47%);
+
+    }
+
+    .nav>.nav-btn>label>span {
+        color: #fff;
+        font-size: 13px;
+
+    }
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #333;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+}
+
+/* Screens below 480px */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

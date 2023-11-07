@@ -1,0 +1,134 @@
+/* Variables */
+$color_1: #4e89ae;
+$color_2: #43658b;
+$color_3: #ed6663;
+$color_4: #ffa372;
+$hover_color: #444;
+$bg_color: #8ccff7;
+$percentage: 50%;
+$first_circle: 70px;
+$second_circle: 80px;
+$third_circle: 90px;
+$fourth_circle: 100px;
+
+* {
+    margin: 0;
+}
+// Image Section
+section {
+    background-color: $bg_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img {
+    margin-bottom: 7vh;
+}
+
+// Lines
+.lines {
+    height: 5vh;
+    width: 100%;
+}
+.lines:nth-child(1) {
+    background-color: $color_1;
+}
+.lines:nth-child(2) {
+    background-color: $color_2;
+}
+.lines:nth-child(3) {
+    background-color: $color_3;
+}
+.lines:nth-child(4) {
+    background-color: $color_4;
+}
+.lines:hover {
+    background-color: $hover_color;
+}
+
+// Circles
+.container_circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    height: 30vh;
+    padding: 7vh;
+}
+.circles:nth-child(1) {
+    width: $first_circle;
+    height: $first_circle;
+    border-radius: $percentage;
+    background-color: $color_1;
+    margin: 5px;
+}
+.circles:nth-child(2) {
+    width: $second_circle;
+    height: $second_circle;
+    border-radius: $percentage;
+    background-color: $color_2;
+    margin: 5px;
+}
+.circles:nth-child(3) {
+    width: $third_circle;
+    height: $third_circle;
+    border-radius: $percentage;
+    background-color: $color_3;
+    margin: 5px;
+}
+.circles:nth-child(4) {
+    width: $fourth_circle;
+    height: $fourth_circle;
+    border-radius: $percentage;
+    background-color: $color_4;
+    margin: 5px;
+}
+.circles:hover {
+    background-color: $hover_color;
+}
+
+// Footer
+footer {
+    background-color: $bg_color;
+    height: 5vh;
+    width: 100%;
+}
+
+// @media queries
+// 801px and above
+@media (min-width: 801px) {
+    img {
+        content: url("https://via.placeholder.com/400");
+    }
+}
+// Between 481px and 800px
+@media (max-width: 800px) {
+    img {
+        content: url("https://via.placeholder.com/300");
+    }
+}
+//480px and below
+@media (max-width: 480px) {
+    img {
+        content: url("https://via.placeholder.com/200");
+    }
+}
+//Circle adjustment
+@media (max-width: 621px) {
+    .container_circle {
+        flex-direction: column;
+        height: 61vh;
+    }
+    .circles:nth-child(1) {
+        height: 80px;
+    }
+    .circles:nth-child(2) {
+        height: 90px;
+    }
+    .circles:nth-child(3) {
+        height: 100px;
+    }
+    .circles:nth-child(4) {
+        height: 120px;
+    }
+}

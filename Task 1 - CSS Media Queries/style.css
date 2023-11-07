@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+}
+
+main {
+    padding: 0 13rem;
+    font-family: monospace;
+}
+
+/*Logo*/
+.logo {
+    padding: 1rem;
+}
+
+/*Container for Illustration*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-gap: 0px 0px;
+}
+/*Image Size*/
+.container img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+/*Text Padding*/
+.information {
+    padding: 15px;
+    line-height: 1.5;
+}
+
+/*Footer*/
+footer {
+    background-color: #14181d;
+    color: #ffffff;
+    text-align: center;
+    padding: 26px;
+}
+
+/*Above 1024px*/
+@media (min-width: 1025px) {
+    .information p {
+        font-size: 12px;
+    }
+}
+/*At exactly 1024px*/
+@media (max-width: 1024px){
+    main{
+        padding: 0;
+    }
+    .information p {
+        font-size: 16px;
+    }
+    footer{
+        font-size: 19px;
+    }
+}
+
+/*At exactly 800px*/
+@media (max-width: 800px) {
+    .logo img{
+        width: 48px;
+    }
+    footer{
+        font-size: 16px;
+    }
+}
+
+/* Screen larger than 300px? 1 column */
+@media (min-width: 300px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
